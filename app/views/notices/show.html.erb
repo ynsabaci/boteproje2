@@ -1,0 +1,29 @@
+<p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <p><%= @notice.title %></p>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>İlan Başlığı</th>
+              <th>İlan Metni</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><%= @notice.title %></td>
+              <td><%= @notice.message %></td>
+          </tr>
+          </tbody>
+        </table>
+          <%= link_to 'Düzenle', edit_notice_path(@notice), class: "btn btn-warning" %> |
+          <%= link_to 'Geri', notices_path, class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+</div>

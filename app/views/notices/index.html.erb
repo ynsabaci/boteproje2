@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-11">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <p>Tüm İlanlar</p>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>İlan Başlığı</th>
+              <th>İlan Metni</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @notices.each do |notice| %>
+              <tr>
+                <td>
+                  <span class="label label-info"><%= notice.title %></span>
+                </td>
+                <td><%= notice.message %></td>
+                <td><%= link_to 'Görüntüle', notice %></td>
+                <td><%= link_to 'Düzenle', edit_notice_path(notice) %></td>
+                <td><%= link_to 'Sil', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="pull-right">
+      <%= link_to 'Yeni İlan Ekle', new_notice_path, class: "btn btn-info" %>
+    </p>
+  </div>
+</div>
