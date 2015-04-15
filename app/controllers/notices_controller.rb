@@ -1,6 +1,7 @@
 class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
+  before_action :is_permitted?, only: [:edit, :update, :destroy]
 
   # GET /notices
   # GET /notices.json
@@ -25,11 +26,9 @@ class NoticesController < ApplicationController
     @notice.user = current_user
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
-        format.json { render :show, status: :created, location: @notice }
+        redirect_to @notice, notice: 'Notice was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
+        render :new
       end
     end
   end
@@ -71,5 +70,9 @@ class NoticesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def notice_params
     params.require(:notice).permit(:title, :message, :user_id)
+  end
+
+  def is_permitted?
+    redirect_to root_path unless (@notice.user_id == current_user.id)
   end
 end
