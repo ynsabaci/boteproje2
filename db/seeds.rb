@@ -7,10 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(first_name: "Alper", last_name: "Uyumaz", email: "foobar@gmail.com", password: "12345678",
-	password_confirmation: "12345678")
+  password_confirmation: "12345678")
 
-Notice.create(title: "SATILIK", message: "Satılık klavye", user_id: User.first.id)
-Notice.create(title: "SATILIK", message: "Satılık Toyota Corolla", user_id: User.first.id)
-Notice.create(title: "ARANIYOR", message: "Programla Dilleri 2 Kitabı", user_id: User.first.id)
-Notice.create(title: "SATILIK", message: "Çift kişilik koltuk", user_id: User.first.id)
-Notice.create(title: "ARANIYOR", message: "iPAD 4GB.", user_id: User.first.id)
+User.create(first_name: "Mustafa Serhat", last_name: "Dündar", email: "msdundars@gmail.com", password: "12345678",
+  password_confirmation: "12345678")
+
+Notice.create(title: "Sahibinden satılık bilgisayar", message: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.", user_id: User.first.id)
+Notice.create(title: "Python3 kitabı aranıyor", message: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.", user_id: User.last.id)
+Notice.create(title: "Ev arkadaşı aranıyor", message: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.", user_id: User.first.id)
+Notice.create(title: "Satılık full ev eşyası", message: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.", user_id: User.last.id)
